@@ -1,0 +1,8 @@
+include AUTHORS.rst
+include CHANGELOG.rst
+include README.rst
+include LICENSE
+recursive-include contentblocks/fixtures *
+recursive-include contentblocks/templates *
+recursive-include contentblocks/templatetags *
+recursive-include contentblocks/tests *

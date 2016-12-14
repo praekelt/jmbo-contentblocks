@@ -1,0 +1,10 @@
+{% extends "jmbo/inclusion_tags/modelbase_detail.html" %}
+{% load jmbo_template_tags ultracache_tags %}
+
+{% block content %}
+    {% ultracache 3600 'object-detail-inclusion' object.id object.modified %}
+        <div class="content">
+            {{ object.content|safe }}
+        </div>
+    {% endultracache %}
+{% endblock %}
