@@ -6,12 +6,26 @@ from django.core.urlresolvers import reverse
 from ckeditor.fields import RichTextField
 
 from jmbo.models import ModelBase
+from .constants import infoblock_layouts
 
 
 class ContentBlock(ModelBase):
     autosave_fields = ("markdown",)
 
     markdown = models.TextField(null=True, blank=True)
+
+    layout = models.CharField(
+        max_length=50, default="plain",
+        help_text="The layout of this block",
+        choices=infoblock_layouts
+        )
+
+    extra_classes = models.CharField(
+        max_length=150,
+        blank=True,
+        help_text="Extra css classes to apply to the block.\
+            Separate with spaces.",
+        )
 
     class Meta:
         verbose_name = "Content Block"

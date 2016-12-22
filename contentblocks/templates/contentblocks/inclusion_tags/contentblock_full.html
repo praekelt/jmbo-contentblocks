@@ -1,0 +1,16 @@
+{% if object.image %}
+    <img src="{{ object.image_detail_url }}" />
+    {% if object.image_attribution %}
+        <div class="attribution">{{ object.image_attribution }}</div>
+    {% endif %}
+{% endif %}
+{% if object.description %}
+    <div class="description">
+        {{ object.description|linebreaks }}
+    </div>
+{% endif %}
+{% if object.markdown %}
+    <div class="content">
+        {{ object.content|safe }}
+    </div>
+{% endif %}
