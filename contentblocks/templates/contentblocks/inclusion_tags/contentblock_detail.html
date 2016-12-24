@@ -1,10 +1,27 @@
-{% extends "jmbo/inclusion_tags/modelbase_detail.html" %}
-{% load jmbo_template_tags ultracache_tags %}
+{% load jmbo_template_tags jmbo_inclusion_tags ultracache_tags %}
 
-{% block content %}
-    {% ultracache 3600 'object-detail-inclusion' object.id object.modified %}
-        <div class="content">
-            {{ object.content|safe }}
-        </div>
-    {% endultracache %}
-{% endblock %}
+{% ultracache 3600 'object-detail-inclusion' object.id object.modified %}
+    <div class="contentblock-{{ object.layout }}{% if object.extra_classes %} {{ object.extra_classes }}{% endif %}">
+        {% if object.layout == "detail" %}
+            {% if object.image %}
+                <img src="{{ object.image_detail_url }}" />
+                {% if object.image_attribution %}
+                    <div class="attribution">{{ object.image_attribution }}</div>
+                {% endif %}
+            {% endif %}
+            {% if object.description %}
+                <div class="description">
+                    {{ object.description|linebreaks }}
+                </div>
+            {% endif %}
+            {% if object.markdown %}
+                <div class="content">
+                    {{ object.content|safe }}
+                </div>
+            {% endif %}
+        {% else %}
+            {% comment %}The object picks its own layout{% endcomment %}
+            {% render_object object object.layout %}
+        {% endif %}
+    </div>
+{% endultracache %}
