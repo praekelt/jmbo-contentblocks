@@ -24,7 +24,7 @@ A Content Block has:
   * An extra_classes field, to attach extra CSS classes to the containing div of the rendered item
 
 Extra layouts
----
+-------------
 
 ContentBlocks are Jmbo Modelbase objects, so the normal view template is in ``templates/contentblocks/inclusion_tags/contentblock_detail.html``. It is preferable to NOT override this template, as it contains logic to delegate to different view templates.
 
@@ -35,7 +35,7 @@ The standard detail view provides a wrapping div with the class ``contentblock-{
 It will then render the object if the object has its layout set to ``detail``, or delegate to a different template. Example below.
 
 Example
----
+-------
 
 In this example, we want to render only the title of the object as a h2 tag, nothing else.
 
@@ -54,7 +54,7 @@ To make this template show up as an option in the layouts, add the following to 
 Following this pattern, you can create any amount of different layout templates to render in pages.
 
 Notes
----
+-----
 
 Since markdown allows inline html, the options for layout can be extended to include all kinds of content.
 
