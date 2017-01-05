@@ -3,8 +3,6 @@ import markdown
 from django.db import models
 from django.core.urlresolvers import reverse
 
-from ckeditor.fields import RichTextField
-
 from jmbo.models import ModelBase
 from .constants import infoblock_layouts
 
