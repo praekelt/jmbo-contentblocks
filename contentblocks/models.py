@@ -5,12 +5,13 @@ from django.core.urlresolvers import reverse
 
 from jmbo.models import ModelBase
 from .constants import infoblock_layouts
+from simplemde.fields import SimpleMDEField
 
 
 class ContentBlock(ModelBase):
     autosave_fields = ("markdown",)
 
-    markdown = models.TextField(null=True, blank=True)
+    markdown = SimpleMDEField(null=True, blank=True)
 
     layout = models.CharField(
         max_length=50, default="plain",
