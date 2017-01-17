@@ -14,6 +14,7 @@ setup(
         #"jmbo>=3.0.0", uncomment when released
         #"beautifulsoup4",
         #"pypandoc",
+        "django-simplemde",
         "markdown",
     ],
     include_package_data=True,
