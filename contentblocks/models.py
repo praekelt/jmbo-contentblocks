@@ -7,6 +7,7 @@ from jmbo.models import ModelBase
 from .constants import infoblock_layouts
 from simplemde.fields import SimpleMDEField
 
+from link.models import Link
 
 class ContentBlock(ModelBase):
     autosave_fields = ("markdown",)
@@ -26,8 +27,8 @@ class ContentBlock(ModelBase):
             Separate with spaces.",
         )
 
-    link = models.Foreignkey(
-        "Link",
+    link = models.ForeignKey(
+        Link,
         models.SET_NULL,
         blank=True,
         null=True
