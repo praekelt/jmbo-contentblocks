@@ -7,6 +7,7 @@ from jmbo.models import ModelBase
 from .constants import infoblock_layouts
 from simplemde.fields import SimpleMDEField
 
+from link.models import Link
 
 class ContentBlock(ModelBase):
     autosave_fields = ("markdown",)
@@ -25,6 +26,13 @@ class ContentBlock(ModelBase):
         help_text="Extra css classes to apply to the block.\
             Separate with spaces.",
         )
+
+    link = models.ForeignKey(
+        Link,
+        models.SET_NULL,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         verbose_name = "Content Block"
