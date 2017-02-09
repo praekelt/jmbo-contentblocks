@@ -16,6 +16,7 @@ setup(
         #"pypandoc",
         "django-simplemde",
         "markdown",
+        "django-link",
     ],
     include_package_data=True,
     tests_require=[

@@ -26,6 +26,13 @@ class ContentBlock(ModelBase):
             Separate with spaces.",
         )
 
+    link = models.Foreignkey(
+        "Link",
+        models.SET_NULL,
+        blank=True,
+        null=True
+    )
+
     class Meta:
         verbose_name = "Content Block"
         verbose_name_plural = "Content Blocks"
