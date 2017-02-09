@@ -8,18 +8,6 @@ TIME_ZONE = "Africa/Johannesburg"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "test.db",
-        "USER": "",
-        "PASSWORD": "",
-        "HOST": "",
-        "PORT": "",
-    }
-}
-"""
-
-DATABASES = {
-    "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "jmbo",
         "USER": "postgres",
@@ -28,7 +16,6 @@ DATABASES = {
         "PORT": "",
     }
 }
-"""
 
 INSTALLED_APPS = (
     "contentblocks",
